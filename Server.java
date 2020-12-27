@@ -9,18 +9,18 @@ public class Server extends UnicastRemoteObject implements MyInterface {
     private double solde;
 
     public String debiter(double s){
-        if (solde==0)
+        if (solde<s)
         {
-            return "plus de solde ";
+            return "solde insuffisant";
         }
         else {
             solde-=s;
-            return "solde debité";
+            return "solde debite avec succes!";
         }
     }
     public String crediter (double s) {
         solde+=s;
-        return "solde credité";
+        return "solde credite avec succes!";
     }
     public double lireSolde()
     {
